@@ -1,0 +1,12 @@
+.header {
+    margin: 0 auto;
+    width: 100vh;
+    height: 50vh;
+    text-align: center;
+    padding: 100px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+    color: black;
+}
