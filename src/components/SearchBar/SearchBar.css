@@ -1,0 +1,14 @@
+div.form {
+    text-align: center;
+}
+
+.form-control {
+    width: 30%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.button {
+    margin: 0 auto;
+    color: black;
+}
