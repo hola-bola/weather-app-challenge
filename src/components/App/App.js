@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from '../SearchBar/SearchBar';
 import './App.css';
 
 
@@ -11,6 +12,7 @@ const App = () => {
           <p>Helping you find weather conditions in cities</p>
         </header>
       </div>
+      <SearchBar />
     </div>
   );
 }
