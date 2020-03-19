@@ -3,14 +3,17 @@ import './SearchBar.css';
 
 const SearchBar = (props) => {
     return (
-        <form onSubmit={props.getWeather}>
+    <div className="form">
+        <form onSubmit={props.getWeather} className="form-group">
             <input
-            type='text'
-            placeholder='Enter your City'
-            name='city'
+            type="text"
+            placeholder="Enter your City"
+            name="city"
+            className="form-control"
             />
-            <button>Get Weather</button>
+         <button type="submit" className="btn btn-primary btn-lg btn-warning">Get Weather</button>
         </form>
+    </div>
     )
 }
 
