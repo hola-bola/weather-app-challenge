@@ -1,8 +1,8 @@
 import React from 'react';
 import Icons from '../../icons';
-import './SearchResults.css';
+import './Tile.css';
 
-const SearchResults = ({temperature, minTemp, maxTemp,condition, error }) => {
+const Tile = ({temperature, minTemp, maxTemp,condition, error }) => {
    
  
     return (
@@ -16,4 +16,4 @@ const SearchResults = ({temperature, minTemp, maxTemp,condition, error }) => {
     )
 }
 
-export default SearchResults;
+export default Tile;
