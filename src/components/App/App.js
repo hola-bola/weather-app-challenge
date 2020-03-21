@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import axios from 'axios';
 import APIKEY from '../../apikey';
-import Tiles from '../Tiles/Tiles';
-import SearchResults from '../SearchResults/SearchResults';
+import TileContainer from '../TileContainer/TileContainer';
 import './App.css';
 
 const APIKEYS = APIKEY;
@@ -42,7 +41,7 @@ const App = () => {
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      <Tiles dailyData={weather.dailyData} />
+      <TileContainer dailyData={weather.dailyData} />
       {console.log(weather)}
       </div>
   );

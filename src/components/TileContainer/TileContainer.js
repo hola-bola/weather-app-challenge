@@ -1,24 +1,23 @@
 import React from 'react';
-import SearchResults from '../SearchResults/SearchResults';
-import './Tiles.css'
+import Tile from '../Tile/Tile';
 
-const Tiles = ({ dailyData }) => {
+const TileContainer = ({ dailyData }) => {
 
     return (
     <div className="container">
         <div className="row justify-content-center">
         {dailyData && dailyData.map(data => {
-                return <SearchResults 
+                return <Tile 
                 key={data.dt}
                 maxTemp={data.main.temp_max}
                 temperature={data.main.temp}
                 minTemp={data.main.temp_min}/>
             })}
-            {/* <SearchResults error={dailyData.error} /> */}
+            {/* <Tile error={dailyData.error} /> */}
         </div>
     </div>
     )
 }
 
 
-export default Tiles;
+export default TileContainer;
