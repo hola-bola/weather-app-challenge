@@ -1,17 +1,21 @@
-import React from 'react'
+import React from 'react';
+import Icons from '../../icons';
+import './SearchResults.css';
 
-const SearchResults = ({city, dailyData, description, day, temperature, minTemp, maxTemp, condition, error }) => {
+const SearchResults = ({temperature, minTemp, maxTemp,condition, error }) => {
+   
+ 
     return (
-        <div className="card text-white bg-warning mb-3">
-            {city && <p className="card-title">{city}</p>}
-            {description && <p>{description}</p>}
-            {day && <p>{day}</p>}
-            {maxTemp && <sup> {maxTemp}</sup>}
-            {temperature && <p className="card-text">{temperature}</p>}
-            {minTemp && <sub> {minTemp}</sub>}
-            {condition && <img src={condition} alt="condition-icon"/>}
-            {error && <p>{error}</p>}
-            {dailyData && <p>{dailyData}</p>}
+        <div className="container">
+            <div className="row">
+                {temperature && <div className="tile col-lg-3  bg-light">
+                    {maxTemp && <p className="sup"> {Math.round(maxTemp)}<sup>°C</sup></p>}
+                    {temperature && <p className="temp">{Math.round(temperature)}<sup>°C</sup></p>}
+                    {minTemp && <p className="sub"> {Math.round(minTemp)}<sup>°C</sup></p>}
+                    {condition && <img src={condition} alt="condition-icon"/>}
+                </div>}
+                {error && <p className="error">{error}</p>}
+            </div>
         </div>
     )
 }
