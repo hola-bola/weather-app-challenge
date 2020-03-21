@@ -35,7 +35,13 @@
     },
     "description": "### the task implement a very basic weather app using ReactJS",
     "main": "index.js",
-    "devDependencies": {},
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.2",
+        "jsdom": "^16.2.1",
+        "mocha": "^7.1.1"
+    },
     "author": "",
     "license": "ISC"
 }

@@ -39,7 +39,7 @@ const Tile = ({temperature, minTemp, maxTemp, condition }) => {
                     {minTemp && <p className="sub"> {Math.round(minTemp)}<sup>°C</sup></p>}
                 </div>
                     {condition && <img src={getIcon(condition)} alt={condition}/>}
-                    {console.log(clouds)}
+                    {condition && <p className="icon-title">{condition}</p>}
             </div>
     )
 }
