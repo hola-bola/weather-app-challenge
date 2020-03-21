@@ -38,7 +38,6 @@ const App = () => {
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      {console.log(weather.error)}
       <TileContainer dailyData={weather} error={weather.error}/>
       </div>
   );

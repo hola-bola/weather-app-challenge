@@ -8,7 +8,7 @@ const TileContainer = ({ dailyData, error }) => {
     <div className="container">
         <div className="row justify-content-center">
             {error && <p className="error">{error}</p>}
-            {dailyData && dailyData.map(data => {
+            {!error && dailyData.map(data => {
                     return <Tile 
                     key={data.dt}
                     maxTemp={data.main.temp_max}
