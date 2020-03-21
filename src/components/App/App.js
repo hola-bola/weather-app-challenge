@@ -20,10 +20,7 @@ const App = () => {
         let data  = res.data;
         let dailyData = data.list.filter((reading) => {   
           return reading.dt_txt.includes("12:00:00")});
-       setWeather({
-         data: data,
-         dailyData: dailyData
-       })
+       setWeather(dailyData)
       } catch (e) {
         setWeather({
           error:'Please Enter a Correct City'
@@ -41,8 +38,7 @@ const App = () => {
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      <TileContainer dailyData={weather.dailyData} />
-      {console.log(weather)}
+      <TileContainer dailyData={weather} error={weather.error}/>
       </div>
   );
 }
