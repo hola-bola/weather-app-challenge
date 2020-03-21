@@ -1,10 +1,10 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SearchBar = (props) => {
+const SearchBar = ({getWeather}) => {
     return (
     <div className="form">
-        <form onSubmit={props.getWeather} className="form-group">
+        <form onSubmit={getWeather} className="form-group">
             <input
             type="text"
             placeholder="Enter your City"

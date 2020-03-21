@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import axios from 'axios';
 import APIKEY from '../../apikey';
+import Tiles from '../Tiles/Tiles';
 import SearchResults from '../SearchResults/SearchResults';
 import './App.css';
 
@@ -15,17 +16,20 @@ const App = () => {
     const city = e.target.elements.city.value
     e.preventDefault()
       const URL = (`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${APIKEYS}`)
-      let res = await axios.get(URL);
-      let data  = res.data;
-      setWeather({
-        data: data,
-        city: data.city.name,
-        description: data.list[1].weather.description,
-        temperature: data.list[0].main.temp,
-        minTemp: data.list[0].main.temp_min,
-        maxTemp: data.list[0].main.temp_max,
-        error:""
-      })
+      try {
+        let res = await axios.get(URL);
+        let data  = res.data;
+        let dailyData = data.list.filter((reading) => {   
+          return reading.dt_txt.includes("12:00:00")});
+       setWeather({
+         data: data,
+         dailyData: dailyData
+       })
+      } catch (e) {
+        setWeather({
+          error:'Please Enter a Correct City'
+        })
+      }
       
   }
 
@@ -38,13 +42,7 @@ const App = () => {
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      <SearchResults 
-        city={weather.city}
-        description={weather.description}
-        maxTemp={weather.maxTemp}
-        temperature={weather.temperature}
-        minTemp={weather.minTemp}
-        error={weather.error} />
+      <Tiles dailyData={weather.dailyData} />
       {console.log(weather)}
       </div>
   );
