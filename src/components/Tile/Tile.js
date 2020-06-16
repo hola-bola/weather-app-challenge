@@ -5,7 +5,7 @@ import './Tile.css';
 const Tile = ({temperature, minTemp, maxTemp, condition }) => {
    
     function getIcon(weatherCondition) {
-        if(weatherCondition === 'Cloud'){
+        if(weatherCondition === 'Clouds'){
             return clouds
         }
         if(weatherCondition === 'Rain'){
@@ -23,9 +23,7 @@ const Tile = ({temperature, minTemp, maxTemp, condition }) => {
         if(weatherCondition === 'Snow'){
             return snow
         }
-        if(weatherCondition === 'Cloud'){
-            return clouds
-        }
+         
         else {
             return sunny;
         }
@@ -38,8 +36,9 @@ const Tile = ({temperature, minTemp, maxTemp, condition }) => {
                     {temperature && <p className="temp">{Math.round(temperature)}<sup>°C</sup></p>}
                     {minTemp && <p className="sub"> {Math.round(minTemp)}<sup>°C</sup></p>}
                 </div>
-                    {condition && <img src={getIcon(condition)} alt={condition}/>}
                     {condition && <p className="icon-title">{condition}</p>}
+                    {condition && <img src={getIcon(condition)} alt={condition}/>}
+                    
             </div>
     )
 }

@@ -10,7 +10,7 @@ const APIKEYS = APIKEY;
 const App = () => {
 
   const [weather, setWeather] = useState([])
-
+  
   async function fetchWeather(e){
     const city = e.target.elements.city.value
     e.preventDefault()
