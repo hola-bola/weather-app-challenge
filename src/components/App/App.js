@@ -33,12 +33,14 @@ const App = () => {
     <div className="App">
       <div className="title-header">
         <header className="header">
-          <h1 className="title">myWeather</h1>
-          <p>Helping you find weather conditions in cities</p>
+          <h1 className="title">myWeather App</h1>
+          <p className="subtitle">5-day Weather Forecast</p>
+          <p className="slug">Helping you find weather conditions Globally</p>
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      <TileContainer dailyData={weather} error={weather.error}/>
+      <TileContainer dailyData={weather} error={weather.error} cityName={fetchWeather}/>
+      
       </div>
   );
 }

@@ -1,3 +1,13 @@
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
 .dataDiv {
     float: left;
     margin: 20px 20px 0 20px;

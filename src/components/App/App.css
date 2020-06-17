@@ -1,7 +1,7 @@
 .header {
     margin: 0 auto;
     width: 100vh;
-    height: 35vh;
+    height: 40vh;
     text-align: center;
     padding: 100px 0;
 }
@@ -9,8 +9,16 @@
 .title {
     color: black;
     font-weight: 600;
+    font-size: 3em;
 }
 
-p {
+p.slug {
     font-style: italic;
+    font-size: 1.25em;
+}
+
+.subtitle {
+    color: black;
+    font-style: normal;
+    margin-bottom: 20px;
 }
