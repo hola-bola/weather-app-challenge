@@ -9,7 +9,8 @@ const APIKEYS = APIKEY;
 
 const App = () => {
 
-  const [weather, setWeather] = useState([])
+  const [weather, setWeather] = useState([]);
+  const [cityInfo, setCityInfo] = useState([]);
   
   async function fetchWeather(e){
     const city = e.target.elements.city.value
@@ -18,9 +19,11 @@ const App = () => {
       try {
         let res = await axios.get(URL);
         let data  = res.data;
+        let cityAndCountry = `${data.city.name}, ${data.city.country}`
         let dailyData = data.list.filter((reading) => {   
           return reading.dt_txt.includes("12:00:00")});
-       setWeather(dailyData)
+        setCityInfo(cityAndCountry);
+        setWeather(dailyData);
       } catch (e) {
         setWeather({
           error:'Please Enter a Correct City'
@@ -39,8 +42,7 @@ const App = () => {
         </header>
       </div>
       <SearchBar getWeather={fetchWeather}/>
-      <TileContainer dailyData={weather} error={weather.error} cityName={fetchWeather}/>
-      
+      <TileContainer dailyData={weather} error={weather.error} cityInfo={cityInfo}/>   
       </div>
   );
 }

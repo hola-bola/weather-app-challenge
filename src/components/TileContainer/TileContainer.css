@@ -1,7 +1,11 @@
 .error {
-    margin: 0 auto;
-    padding: 5px;
+    text-align: center;
+    margin: 30px;
     color: black;
-    border-radius: 15px;
-    font-size: 1.5em;
+}
+
+.city {
+    text-align: center;
+    margin: 30px;
+    color: black;
 }
