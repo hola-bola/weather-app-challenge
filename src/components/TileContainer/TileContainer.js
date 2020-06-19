@@ -8,7 +8,7 @@ const TileContainer = ({ dailyData, error, cityInfo}) => {
     return (
     <div className="container">
         {error && <p className="error">{error}</p>}
-        {cityInfo && <p className="city">{cityInfo}</p>}
+        {!error && <p className="city">{cityInfo}</p>}
         <div className="row justify-content-center">
         {!error && dailyData.map(data => {
                 return <Tile 
